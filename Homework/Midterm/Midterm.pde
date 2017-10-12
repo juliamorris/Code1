@@ -15,14 +15,15 @@ void setup(){
   xPos = width/2;
   yPos = height/2;
   
-  instructions();
+  
 
 }
 
 void draw(){
-
   fill(0);
-  rect(0, 140, width, height);
+  rect(0, 0, width, height);
+  
+  instructions();
   
   fill(255);
   noStroke();
@@ -44,19 +45,20 @@ void draw(){
 void mousePressed(){
    if(dist(xPos, yPos, mouseX, mouseY)<size){
       size = size-10;
-      xVel = xVel + 3;
-      yVel = yVel + 3;
+      xVel = int(xVel * 1.5);
+      yVel = int(yVel * 1.5);
    }else{
      size = size + 10;
-     xVel = xVel - 3;
-     yVel = yVel - 2;
+     xVel = int(xVel * .5);
+     yVel = int(yVel * .5);
    }
 }
 
 void instructions(){
-  fill(255, 0, 0);  
+  fill(255);  
   textSize(18);
-  if(millis()<1000){
+  if(millis()<=1000){
+    //println("this worked"); 
     text("When clicked, the ball with get smaller and move faster.", 10, 50); 
     text("If you miss, the ball will get bigger and move slower.", 10, 80);
     text("Miss three times, you lose. Click 5 times, you win.", 10, 110);
