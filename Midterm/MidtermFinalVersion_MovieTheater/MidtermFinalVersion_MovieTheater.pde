@@ -60,8 +60,15 @@ void seatSelection(){
   background(255);
   textFont(cinemaText);
   
+  fill(0);
+  rect(100, 550, 400, 25);
+  fill(255);
+  textSize(20);
+  text("Screen", width/2, 570);
+  
+  
   for (int i = 40; i <=width-40; i +=60){
-  for (int j = 150; j <= height-50; j +=90){
+  for (int j = 100; j <= height-100; j +=90){
     
     if(selected[index]==false){
       image(imgAvailable, i, j, size, size);
@@ -89,16 +96,19 @@ void seatSelection(){
       if(doDisplay == true) {
         if(selected[index]==false){
           fill(0);
-          text("Seat Available", 170, 100);
+          textSize(50);
+          text("Seat Available", width/2, 60);
         }
         if(selected[index]==true){
           fill(0);
-          text("Seat Selected", 170, 100);
+          textSize(50);
+          text("Seat Selected", width/2, 60);
         }
       } 
       if(doDisplay == false){
           fill(0);
-          text("Seat Taken", 170, 100);
+          textSize(50);
+          text("Seat Taken", width/2, 60);
       }
     }
        
@@ -114,7 +124,7 @@ void seatSelection(){
 }
 
 void star(float x, float y, float radius1, float radius2, int npoints) {
-  fill(255, 255, 0);
+  fill(255, 255, 150);
   noStroke();
   float angle = TWO_PI / npoints;
   float halfAngle = angle/2.0;
