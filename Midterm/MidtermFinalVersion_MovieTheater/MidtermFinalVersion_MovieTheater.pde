@@ -4,6 +4,7 @@ PImage imgAvailable;
 PImage imgTaken;
 PImage imgSelected;
 PImage imgCurtains;
+PImage imgPopcorn;
 PFont cinemaText;
 PFont cinemaTitle;
 
@@ -22,6 +23,7 @@ void setup(){
   imgSelected = loadImage("selected.jpg");
   imgTaken = loadImage("taken.jpg");
   imgCurtains = loadImage("curtains.jpg");
+  imgPopcorn = loadImage("popcorn.png");
   cinemaText = createFont("CinemaText.ttf", 50);
   cinemaTitle = createFont("CinemaTitle.ttf", 70);
   
@@ -44,9 +46,14 @@ void setup(){
 void draw(){
   
     openingScene();
-     if(key == ENTER){
+    
+    if(key == ENTER){
        seatSelection();
-     }
+    }
+    
+    if(key == TAB){
+         closingScene();
+    }
 }
   
   
@@ -65,6 +72,8 @@ void seatSelection(){
   fill(255);
   textSize(20);
   text("Screen", width/2, 570);
+  fill(0);
+  text("Press tab when finished", 500, 20);
   
   
   for (int i = 40; i <=width-40; i +=60){
@@ -97,18 +106,18 @@ void seatSelection(){
         if(selected[index]==false){
           fill(0);
           textSize(50);
-          text("Seat Available", width/2, 60);
+          text("Seat Available", width/2, 70);
         }
         if(selected[index]==true){
           fill(0);
           textSize(50);
-          text("Seat Selected", width/2, 60);
+          text("Seat Selected", width/2, 70);
         }
       } 
       if(doDisplay == false){
           fill(0);
           textSize(50);
-          text("Seat Taken", width/2, 60);
+          text("Seat Taken", width/2, 70);
       }
     }
        
@@ -141,7 +150,7 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
 }
 
 void openingScene(){
-    image(imgCurtains, 0, 0, width, height);
+  image(imgCurtains, 0, 0, width, height);
   
   textFont(cinemaTitle);
   fill(255);
@@ -168,3 +177,32 @@ void openingScene(){
     star(0, 0, 21, 51, 5);
    popMatrix();
 }
+
+
+void closingScene(){
+  image(imgCurtains, 0, 0, width, height);
+  
+  textFont(cinemaTitle);
+  fill(255);
+  textAlign(CENTER);
+  text("Enjoy", width/2, 75);
+  text("the film", width/2, 150);
+
+  
+  pushMatrix();
+    translate(100, 300);
+    rotate(frameCount/-10);
+    star(0, 0, 21, 51, 5);
+   popMatrix();
+   
+  pushMatrix();
+    translate(500, 300);
+    rotate(frameCount/-10);
+    star(0, 0, 21, 51, 5);
+   popMatrix();
+   
+
+   image(imgPopcorn, 200, 325, 200, 200);
+}
+  
+  
