@@ -1,5 +1,5 @@
 void openingScene(){
-  image(imgCurtains, 0, 0, width, height);
+  image(imgCurtains, 0, -100, width, height+100);
   
   textFont(cinemaTitle);
   fill(255);
@@ -11,8 +11,8 @@ void openingScene(){
   textFont(cinemaText);
   fill(100, 100, 200);
   textAlign(CENTER);
-  text("Press enter", width/2, 480);
-  text("to select seats", width/2, 530);
+  text("Press enter", width/2, 230);
+  text("to select seats", width/2, 280);
   
   pushMatrix();
     translate(100, 300);

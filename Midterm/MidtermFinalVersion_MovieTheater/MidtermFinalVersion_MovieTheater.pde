@@ -7,6 +7,7 @@ PImage imgCurtains;
 PImage imgPopcorn;
 PFont cinemaText;
 PFont cinemaTitle;
+PFont marqueeText;
 
 boolean[] selected = new boolean [45];
 boolean clickedOnce = true;
@@ -26,7 +27,8 @@ void setup(){
   imgCurtains = loadImage("curtains.jpg");
   imgPopcorn = loadImage("popcorn.png");
   cinemaText = createFont("CinemaText.ttf", 50);
-  cinemaTitle = createFont("CinemaTitle.ttf", 60);
+  cinemaTitle = createFont("CinemaTitle.ttf", 70);
+  marqueeText = createFont("marqueeText.ttf", 100);
   
   kernels = new ArrayList<Kernel>();
   imgKernel = loadImage("kernel.png");

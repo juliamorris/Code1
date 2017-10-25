@@ -1,15 +1,17 @@
 void closingScene(){
-  background(255, 100, 200);
+  background(200, 100, 150);
   
-  textFont(cinemaTitle);
-  fill(0);
+  textFont(marqueeText);
+  fill(255);
   textAlign(CENTER);
-  text("Click to pop", width/2, 75);
-  text("some popcorn", width/2, 150);
-
-  image(imgPopcorn, 150, 350, 300, 300);
+  text("Hungry?", width/2, 150);
+  textFont(cinemaText);
   image(imgPopcorn, -50, 350, 300, 300);
+    text("Click", 100, 575);
+  image(imgPopcorn, 150, 350, 300, 300);
+    text("to", 300, 575);
   image(imgPopcorn, 350, 350, 300, 300);
+    text("pop", 500, 575);
   
   flyingPopcorn();
 }
