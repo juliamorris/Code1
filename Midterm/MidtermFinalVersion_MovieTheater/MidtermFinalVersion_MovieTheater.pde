@@ -14,7 +14,8 @@ int index = 0;
 int[] takenSeats = new int[10];
 boolean doDisplay = true ;
 
-
+ArrayList<Kernel> kernels;
+PImage imgKernel;
 
 void setup(){
   size(600, 600);
@@ -25,9 +26,10 @@ void setup(){
   imgCurtains = loadImage("curtains.jpg");
   imgPopcorn = loadImage("popcorn.png");
   cinemaText = createFont("CinemaText.ttf", 50);
-  cinemaTitle = createFont("CinemaTitle.ttf", 70);
+  cinemaTitle = createFont("CinemaTitle.ttf", 60);
   
-  
+  kernels = new ArrayList<Kernel>();
+  imgKernel = loadImage("kernel.png");
   
   size = 50;
   
@@ -131,78 +133,3 @@ void seatSelection(){
   }
   }
 }
-
-void star(float x, float y, float radius1, float radius2, int npoints) {
-  fill(255, 255, 150);
-  noStroke();
-  float angle = TWO_PI / npoints;
-  float halfAngle = angle/2.0;
-  beginShape();
-  for (float a = 0; a < TWO_PI; a += angle) {
-    float sx = x + cos(a) * radius2;
-    float sy = y + sin(a) * radius2;
-    vertex(sx, sy);
-    sx = x + cos(a+halfAngle) * radius1;
-    sy = y + sin(a+halfAngle) * radius1;
-    vertex(sx, sy);
-  }
-  endShape(CLOSE);
-}
-
-void openingScene(){
-  image(imgCurtains, 0, 0, width, height);
-  
-  textFont(cinemaTitle);
-  fill(255);
-  textAlign(CENTER);
-  text("Welcome to", width/2, 75);
-  text("the Cinema", width/2, 150);
-  
- 
-  textFont(cinemaText);
-  fill(100, 100, 200);
-  textAlign(CENTER);
-  text("Press enter", width/2, 480);
-  text("to select seats", width/2, 530);
-  
-  pushMatrix();
-    translate(100, 300);
-    rotate(frameCount/-10);
-    star(0, 0, 21, 51, 5);
-   popMatrix();
-   
-  pushMatrix();
-    translate(500, 300);
-    rotate(frameCount/-10);
-    star(0, 0, 21, 51, 5);
-   popMatrix();
-}
-
-
-void closingScene(){
-  image(imgCurtains, 0, 0, width, height);
-  
-  textFont(cinemaTitle);
-  fill(255);
-  textAlign(CENTER);
-  text("Enjoy", width/2, 75);
-  text("the film", width/2, 150);
-
-  
-  pushMatrix();
-    translate(100, 300);
-    rotate(frameCount/-10);
-    star(0, 0, 21, 51, 5);
-   popMatrix();
-   
-  pushMatrix();
-    translate(500, 300);
-    rotate(frameCount/-10);
-    star(0, 0, 21, 51, 5);
-   popMatrix();
-   
-
-   image(imgPopcorn, 200, 325, 200, 200);
-}
-  
-  
