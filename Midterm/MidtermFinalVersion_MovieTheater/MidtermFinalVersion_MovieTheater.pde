@@ -5,9 +5,11 @@ PImage imgTaken;
 PImage imgSelected;
 PImage imgCurtains;
 PImage imgPopcorn;
+PImage imgTheaterCurtains;
 PFont cinemaText;
 PFont cinemaTitle;
 PFont marqueeText;
+
 
 boolean[] selected = new boolean [45];
 boolean clickedOnce = true;
@@ -26,6 +28,7 @@ void setup(){
   imgTaken = loadImage("taken.jpg");
   imgCurtains = loadImage("curtains.jpg");
   imgPopcorn = loadImage("popcorn.png");
+  imgTheaterCurtains = loadImage("TheaterCurtains.png");
   cinemaText = createFont("CinemaText.ttf", 50);
   cinemaTitle = createFont("CinemaTitle.ttf", 70);
   marqueeText = createFont("marqueeText.ttf", 100);
@@ -71,13 +74,16 @@ void seatSelection(){
   background(255);
   textFont(cinemaText);
   
+  image(imgTheaterCurtains, 0, 0, 35, height);
+  image(imgTheaterCurtains, width-30, 0, 35, height);
+  
   fill(0);
   rect(100, 550, 400, 25);
   fill(255);
   textSize(20);
   text("Screen", width/2, 570);
   fill(0);
-  text("Press tab when finished", 500, 20);
+  text("Press tab when finished", 450, 20);
   
   
   for (int i = 40; i <=width-40; i +=60){
