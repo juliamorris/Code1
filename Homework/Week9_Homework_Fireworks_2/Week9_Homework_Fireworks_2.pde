@@ -1,3 +1,7 @@
+//I think that I need to create an array with for the explosions 
+//but I am confused on how the PVector will play into this.
+//I also think I might need a class to make the explosions.
+
 PVector position;
 int x, y;
 int radius = 0;
