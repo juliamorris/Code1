@@ -32,7 +32,7 @@ void draw(){
     
     mover[i].applyForce(force);
     mover[i].update();
-    mover[i].display(map(mouseY, 0, height, 0, 255), map(mouseY, 0, height, 0, 255));
+    mover[i].display();
   }
 }
 
