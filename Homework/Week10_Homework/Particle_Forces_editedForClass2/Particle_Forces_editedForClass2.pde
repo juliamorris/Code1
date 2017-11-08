@@ -1,5 +1,5 @@
-// all particles are the same color based off mouse location, but
-// i want individual molecules to change
+// attempt at making individual particles change color 
+// from location
 
 
 
@@ -32,7 +32,7 @@ void draw(){
     
     mover[i].applyForce(force);
     mover[i].update();
-    mover[i].display();
+    mover[i].display(map(mouseY, 0, height, 0, 255), map(mouseY, 0, height, 0, 255));
   }
 }
 

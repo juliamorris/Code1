@@ -28,9 +28,7 @@ class Mover{
     acceleration.mult(0);
   }
   
-  void display(){
-    float r = map(mouseX, 0, width, 0, 255);
-    float g = map(mouseY, 0, height, 0, 255);
+  void display(float r, float g){
     fill(r, g, 125);
     ellipse(position.x, position.y, mass*25, mass*25);
   }
