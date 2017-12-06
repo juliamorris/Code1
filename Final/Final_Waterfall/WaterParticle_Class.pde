@@ -28,7 +28,7 @@ class Particle {
   void display() {
     float c = map((abs(xSpeed)+abs(ySpeed)), 0, 5, 200, 250);
     noStroke();
-    fill(180, 200, c);
+    fill(200, 220, c);
     ellipse(x, y, size, size);
   }
 }
