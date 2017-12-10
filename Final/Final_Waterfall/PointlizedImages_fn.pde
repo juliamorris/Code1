@@ -17,7 +17,7 @@ void pointilizedWaterfall(){
   } 
 }
 
-void pointilizedGreen(){
+void pointilizedGreen(int opacity){
   
   loadPixels();
   
@@ -28,14 +28,14 @@ void pointilizedGreen(){
       int loc = x + y * width;
       color c = imgGreen.pixels[loc];
       
-      fill(c);
+      fill(c, opacity);
       noStroke();
       ellipse(i*pixelSize, j*pixelSize, pixelSize, pixelSize);
     }
   } 
 }
 
-void pointilizedRed(){
+void pointilizedRed(int opacity){
   
   loadPixels();
   
@@ -45,15 +45,16 @@ void pointilizedRed(){
       int y = j * pixelSize + pixelSize/2;
       int loc = x + y * width;
       color c = imgRed.pixels[loc];
+       
+      fill(c, opacity); 
       
-      fill(c);
       noStroke();
       ellipse(i*pixelSize, j*pixelSize, pixelSize, pixelSize);
     }
   } 
 }
 
-void pointilizedSnow(){
+void pointilizedSnow(int opacity){
   
   loadPixels();
   
@@ -64,7 +65,7 @@ void pointilizedSnow(){
       int loc = x + y * width;
       color c = imgSnow.pixels[loc];
       
-      fill(c);
+      fill(c, opacity);
       noStroke();
       ellipse(i*pixelSize, j*pixelSize, pixelSize, pixelSize);
     }
